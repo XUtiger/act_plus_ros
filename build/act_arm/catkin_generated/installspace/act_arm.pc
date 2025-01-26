@@ -1,0 +1,8 @@
+prefix=/home/easy/yin/robot_arm/opensource_prj/act_plus_ros/install
+
+Name: act_arm
+Description: Description of act_arm
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

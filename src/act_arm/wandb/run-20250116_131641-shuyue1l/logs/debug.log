@@ -1,0 +1,33 @@
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_setup.py:_flush():68] Current SDK version is 0.19.3
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_setup.py:_flush():68] Configure stats pid to 30812
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_setup.py:_flush():68] Loading settings from /home/easy/.config/wandb/settings
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_setup.py:_flush():68] Loading settings from /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/settings
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_init.py:_log_setup():598] Logging user logs to /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/run-20250116_131641-shuyue1l/logs/debug.log
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_init.py:_log_setup():599] Logging internal logs to /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/run-20250116_131641-shuyue1l/logs/debug-internal.log
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_init.py:init():714] calling init triggers
+2025-01-16 13:16:41,806 INFO    MainThread:30812 [wandb_init.py:init():719] wandb.init called with sweep_config: {}
+config: {}
+2025-01-16 13:16:41,807 INFO    MainThread:30812 [wandb_init.py:init():745] starting backend
+2025-01-16 13:16:42,015 INFO    MainThread:30812 [wandb_init.py:init():749] sending inform_init request
+2025-01-16 13:16:42,017 INFO    MainThread:30812 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-16 13:16:42,018 INFO    MainThread:30812 [wandb_init.py:init():764] backend started and connected
+2025-01-16 13:16:42,020 INFO    MainThread:30812 [wandb_init.py:init():857] updated telemetry
+2025-01-16 13:16:42,027 INFO    MainThread:30812 [wandb_init.py:init():889] communicating run to backend with 90.0 second timeout
+2025-01-16 13:16:44,830 ERROR   Thread-1 (wrapped_target):30812 [internal_api.py:execute():397] 502 response executing GraphQL.
+2025-01-16 13:16:44,830 ERROR   Thread-1 (wrapped_target):30812 [internal_api.py:execute():398] 
+2025-01-16 13:16:53,256 ERROR   Thread-1 (wrapped_target):30812 [internal_api.py:execute():397] 502 response executing GraphQL.
+2025-01-16 13:16:53,256 ERROR   Thread-1 (wrapped_target):30812 [internal_api.py:execute():398] 
+2025-01-16 13:17:09,491 ERROR   Thread-1 (wrapped_target):30812 [internal_api.py:execute():397] 502 response executing GraphQL.
+2025-01-16 13:17:09,491 ERROR   Thread-1 (wrapped_target):30812 [internal_api.py:execute():398] 
+2025-01-16 13:17:41,924 ERROR   Thread-1 (wrapped_target):30812 [internal_api.py:execute():397] 502 response executing GraphQL.
+2025-01-16 13:17:41,924 ERROR   Thread-1 (wrapped_target):30812 [internal_api.py:execute():398] 
+2025-01-16 13:18:12,061 ERROR   MainThread:30812 [wandb_init.py:init():918] encountered error: Run initialization has timed out after 90.0 sec. Please try increasing the timeout with the `init_timeout` setting: `wandb.init(settings=wandb.Settings(init_timeout=120))`.
+2025-01-16 13:18:12,061 ERROR   MainThread:30812 [wandb_init.py:init():1378] error in wandb.init()
+Traceback (most recent call last):
+  File "/home/easy/anaconda3/envs/act-plus/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1368, in init
+    return wi.init(run_settings)
+  File "/home/easy/anaconda3/envs/act-plus/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 924, in init
+    raise error
+wandb.errors.errors.CommError: Run initialization has timed out after 90.0 sec. Please try increasing the timeout with the `init_timeout` setting: `wandb.init(settings=wandb.Settings(init_timeout=120))`.
+2025-01-16 13:18:12,070 WARNING MsgRouterThr:30812 [router.py:message_loop():75] message_loop has been closed

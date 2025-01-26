@@ -1,0 +1,24 @@
+2025-01-16 11:32:24,931 INFO    MainThread:17279 [wandb_setup.py:_flush():68] Current SDK version is 0.19.3
+2025-01-16 11:32:24,931 INFO    MainThread:17279 [wandb_setup.py:_flush():68] Configure stats pid to 17279
+2025-01-16 11:32:24,931 INFO    MainThread:17279 [wandb_setup.py:_flush():68] Loading settings from /home/easy/.config/wandb/settings
+2025-01-16 11:32:24,931 INFO    MainThread:17279 [wandb_setup.py:_flush():68] Loading settings from /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/settings
+2025-01-16 11:32:24,932 INFO    MainThread:17279 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-01-16 11:32:24,932 INFO    MainThread:17279 [wandb_init.py:_log_setup():598] Logging user logs to /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/offline-run-20250116_113224-82cgzxa4/logs/debug.log
+2025-01-16 11:32:24,932 INFO    MainThread:17279 [wandb_init.py:_log_setup():599] Logging internal logs to /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/offline-run-20250116_113224-82cgzxa4/logs/debug-internal.log
+2025-01-16 11:32:24,932 INFO    MainThread:17279 [wandb_init.py:init():714] calling init triggers
+2025-01-16 11:32:24,932 INFO    MainThread:17279 [wandb_init.py:init():719] wandb.init called with sweep_config: {}
+config: {}
+2025-01-16 11:32:24,932 INFO    MainThread:17279 [wandb_init.py:init():745] starting backend
+2025-01-16 11:32:25,161 INFO    MainThread:17279 [wandb_init.py:init():749] sending inform_init request
+2025-01-16 11:32:25,175 INFO    MainThread:17279 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-16 11:32:25,175 INFO    MainThread:17279 [wandb_init.py:init():764] backend started and connected
+2025-01-16 11:32:25,177 INFO    MainThread:17279 [wandb_init.py:init():857] updated telemetry
+2025-01-16 11:32:25,184 INFO    MainThread:17279 [wandb_init.py:init():889] communicating run to backend with 90.0 second timeout
+2025-01-16 11:32:25,345 INFO    MainThread:17279 [wandb_init.py:init():941] starting run threads in backend
+2025-01-16 11:32:25,396 INFO    MainThread:17279 [wandb_run.py:_console_start():2420] atexit reg
+2025-01-16 11:32:25,396 INFO    MainThread:17279 [wandb_run.py:_redirect():2270] redirect: wrap_raw
+2025-01-16 11:32:25,396 INFO    MainThread:17279 [wandb_run.py:_redirect():2335] Wrapping output streams.
+2025-01-16 11:32:25,396 INFO    MainThread:17279 [wandb_run.py:_redirect():2360] Redirects installed.
+2025-01-16 11:32:25,397 INFO    MainThread:17279 [wandb_init.py:init():983] run started, returning control to user process
+2025-01-16 11:32:25,397 INFO    MainThread:17279 [wandb_run.py:_config_callback():1282] config_cb None None {'num_steps': 200, 'eval_every': 500, 'validate_every': 500, 'save_every': 500, 'ckpt_dir': 'trainings/yin_test_1', 'resume_ckpt_path': None, 'episode_len': 100, 'state_dim': 14, 'lr': 1e-05, 'policy_class': 'ACT', 'onscreen_render': False, 'policy_config': {'lr': 1e-05, 'num_queries': 10, 'kl_weight': 1, 'hidden_dim': 512, 'dim_feedforward': 3200, 'lr_backbone': 1e-05, 'backbone': 'resnet18', 'enc_layers': 4, 'dec_layers': 7, 'nheads': 8, 'camera_names': ['top'], 'vq': False, 'vq_class': None, 'vq_dim': None, 'action_dim': 16, 'no_encoder': False}, 'task_name': 'aloha_mobile_yin_xu_train', 'seed': 0, 'temporal_agg': False, 'camera_names': ['top'], 'real_robot': True, 'load_pretrain': False, 'actuator_config': {'actuator_network_dir': None, 'history_len': None, 'future_len': None, 'prediction_len': None}}
+2025-01-16 11:32:25,437 WARNING MsgRouterThr:17279 [router.py:message_loop():75] message_loop has been closed

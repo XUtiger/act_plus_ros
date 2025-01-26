@@ -1,0 +1,19 @@
+{"time":"2025-01-16T13:07:51.278477951+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.3","symlink path":"/home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/run-20250116_130751-sofp69hk/logs/debug-core.log"}
+{"time":"2025-01-16T13:07:51.384237508+08:00","level":"INFO","msg":"created new stream","id":"sofp69hk"}
+{"time":"2025-01-16T13:07:51.384288621+08:00","level":"INFO","msg":"stream: started","id":"sofp69hk"}
+{"time":"2025-01-16T13:07:51.384469861+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"sofp69hk"}
+{"time":"2025-01-16T13:07:51.384590478+08:00","level":"INFO","msg":"sender: started","stream_id":"sofp69hk"}
+{"time":"2025-01-16T13:07:51.384677511+08:00","level":"INFO","msg":"handler: started","stream_id":"sofp69hk"}
+{"time":"2025-01-16T13:07:51.38711162+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"http://localhost:8080/graphql\": dial tcp 127.0.0.1:8080: connect: connection refused"}
+{"time":"2025-01-16T13:07:53.725814317+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"http://localhost:8080/graphql\": dial tcp 127.0.0.1:8080: connect: connection refused"}
+{"time":"2025-01-16T13:07:57.932709776+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"http://localhost:8080/graphql\": dial tcp 127.0.0.1:8080: connect: connection refused"}
+{"time":"2025-01-16T13:08:07.560408002+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"http://localhost:8080/graphql\": dial tcp 127.0.0.1:8080: connect: connection refused"}
+{"time":"2025-01-16T13:08:26.239249139+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"http://localhost:8080/graphql\": dial tcp 127.0.0.1:8080: connect: connection refused"}
+{"time":"2025-01-16T13:08:58.29081045+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"http://localhost:8080/graphql\": dial tcp 127.0.0.1:8080: connect: connection refused"}
+{"time":"2025-01-16T13:09:21.325426879+08:00","level":"INFO","msg":"stream: closing","id":"sofp69hk"}
+{"time":"2025-01-16T13:09:21.325483779+08:00","level":"ERROR","msg":"sender: upsertRun:","error":"failed to upsert bucket: api: failed sending: context canceled"}
+{"time":"2025-01-16T13:09:21.325496234+08:00","level":"INFO","msg":"handler: closed","stream_id":"sofp69hk"}
+{"time":"2025-01-16T13:09:21.325524495+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"sofp69hk"}
+{"time":"2025-01-16T13:09:21.325573937+08:00","level":"INFO","msg":"sender: closed","stream_id":"sofp69hk"}
+{"time":"2025-01-16T13:09:21.325594083+08:00","level":"WARN","msg":"runwork: ignoring record after close","work":{}}
+{"time":"2025-01-16T13:09:21.325993485+08:00","level":"INFO","msg":"stream: closed","id":"sofp69hk"}

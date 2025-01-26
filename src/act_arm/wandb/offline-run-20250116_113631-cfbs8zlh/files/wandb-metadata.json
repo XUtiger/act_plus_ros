@@ -1,0 +1,65 @@
+{
+  "os": "Linux-6.8.0-51-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.10.16",
+  "startedAt": "2025-01-16T03:36:31.734001Z",
+  "args": [
+    "--task_name",
+    "aloha_mobile_yin_xu_train",
+    "--ckpt_dir",
+    "trainings/yin_test_1",
+    "--policy_class",
+    "ACT",
+    "--kl_weight",
+    "1",
+    "--chunk_size",
+    "10",
+    "--hidden_dim",
+    "512",
+    "--batch_size",
+    "1",
+    "--dim_feedforward",
+    "3200",
+    "--lr",
+    "1e-5",
+    "--seed",
+    "0",
+    "--num_steps",
+    "200"
+  ],
+  "program": "/home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/imitate_episodes.py",
+  "codePath": "imitate_episodes.py",
+  "git": {
+    "remote": "https://github.com/huiwenzhang/act-plus-plus.git",
+    "commit": "4e09f863887ae4a0bbdf2ddfc9573338bd2152c3"
+  },
+  "root": "/home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus",
+  "host": "easy-OMEN",
+  "executable": "/home/easy/anaconda3/envs/act-plus/bin/python3",
+  "codePathLocal": "imitate_episodes.py",
+  "cpu_count": 24,
+  "cpu_count_logical": 32,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1340598935552",
+      "used": "212121993216"
+    }
+  },
+  "memory": {
+    "total": "67087933440"
+  },
+  "cpu": {
+    "count": 24,
+    "countLogical": 32
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.4"
+}

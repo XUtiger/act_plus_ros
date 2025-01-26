@@ -1,0 +1,15 @@
+{"time":"2025-01-16T11:35:16.568008504+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.3","symlink path":"/home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/offline-run-20250116_113516-5e9n0py3/logs/debug-core.log"}
+{"time":"2025-01-16T11:35:16.67218458+08:00","level":"INFO","msg":"created new stream","id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:16.672223007+08:00","level":"INFO","msg":"stream: started","id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:16.672293868+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:16.672336433+08:00","level":"INFO","msg":"handler: started","stream_id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:16.672440443+08:00","level":"INFO","msg":"sender: started","stream_id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:16.677514927+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-16T11:35:24.019929787+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-16T11:35:24.020312625+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-16T11:35:24.020643274+08:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-01-16T11:35:25.024918487+08:00","level":"INFO","msg":"stream: closing","id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:25.024949093+08:00","level":"INFO","msg":"handler: closed","stream_id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:25.024964387+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:25.025050055+08:00","level":"INFO","msg":"sender: closed","stream_id":"5e9n0py3"}
+{"time":"2025-01-16T11:35:25.025074773+08:00","level":"INFO","msg":"stream: closed","id":"5e9n0py3"}

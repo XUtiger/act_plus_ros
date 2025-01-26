@@ -1,0 +1,16 @@
+{"time":"2025-01-16T13:36:42.495572648+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.3","symlink path":"/home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/run-20250116_133642-3amqa0fd/logs/debug-core.log"}
+{"time":"2025-01-16T13:36:42.599776669+08:00","level":"INFO","msg":"created new stream","id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:42.599798926+08:00","level":"INFO","msg":"stream: started","id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:42.599870583+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:42.599938323+08:00","level":"INFO","msg":"sender: started","stream_id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:42.599973341+08:00","level":"INFO","msg":"handler: started","stream_id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:43.053625214+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-16T13:36:50.35531933+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-16T13:36:50.355828158+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-16T13:36:51.355973129+08:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.1865499,"progress":"1.6KB/1.6KB"}],"total_operations":1}}
+{"time":"2025-01-16T13:36:52.269547775+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-16T13:36:53.696272166+08:00","level":"INFO","msg":"stream: closing","id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:53.696296016+08:00","level":"INFO","msg":"handler: closed","stream_id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:53.696307036+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:53.696326463+08:00","level":"INFO","msg":"sender: closed","stream_id":"3amqa0fd"}
+{"time":"2025-01-16T13:36:53.696381883+08:00","level":"INFO","msg":"stream: closed","id":"3amqa0fd"}

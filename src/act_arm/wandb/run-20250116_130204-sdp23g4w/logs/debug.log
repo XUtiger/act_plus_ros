@@ -1,0 +1,25 @@
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_setup.py:_flush():68] Current SDK version is 0.19.3
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_setup.py:_flush():68] Configure stats pid to 28619
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_setup.py:_flush():68] Loading settings from /home/easy/.config/wandb/settings
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_setup.py:_flush():68] Loading settings from /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/settings
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_init.py:_log_setup():598] Logging user logs to /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/run-20250116_130204-sdp23g4w/logs/debug.log
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_init.py:_log_setup():599] Logging internal logs to /home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/run-20250116_130204-sdp23g4w/logs/debug-internal.log
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_init.py:init():714] calling init triggers
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_init.py:init():719] wandb.init called with sweep_config: {}
+config: {}
+2025-01-16 13:02:04,907 INFO    MainThread:28619 [wandb_init.py:init():745] starting backend
+2025-01-16 13:02:05,111 INFO    MainThread:28619 [wandb_init.py:init():749] sending inform_init request
+2025-01-16 13:02:05,114 INFO    MainThread:28619 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-16 13:02:05,114 INFO    MainThread:28619 [wandb_init.py:init():764] backend started and connected
+2025-01-16 13:02:05,116 INFO    MainThread:28619 [wandb_init.py:init():857] updated telemetry
+2025-01-16 13:02:05,122 INFO    MainThread:28619 [wandb_init.py:init():889] communicating run to backend with 90.0 second timeout
+2025-01-16 13:02:05,231 ERROR   MainThread:28619 [wandb_init.py:init():918] encountered error: failed to upsert bucket: returned error 401 Unauthorized: {"errors":[{"message":"user is not logged in","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2025-01-16 13:02:05,231 ERROR   MainThread:28619 [wandb_init.py:init():1378] error in wandb.init()
+Traceback (most recent call last):
+  File "/home/easy/anaconda3/envs/act-plus/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1368, in init
+    return wi.init(run_settings)
+  File "/home/easy/anaconda3/envs/act-plus/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 924, in init
+    raise error
+wandb.errors.errors.CommError: failed to upsert bucket: returned error 401 Unauthorized: {"errors":[{"message":"user is not logged in","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2025-01-16 13:02:05,237 WARNING MsgRouterThr:28619 [router.py:message_loop():75] message_loop has been closed

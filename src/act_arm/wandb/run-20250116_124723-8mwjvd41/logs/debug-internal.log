@@ -1,0 +1,17 @@
+{"time":"2025-01-16T12:47:23.861719594+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.3","symlink path":"/home/easy/yin/robot_arm/opensource_prj/orin-act-plus/act-plus-plus/wandb/run-20250116_124723-8mwjvd41/logs/debug-core.log"}
+{"time":"2025-01-16T12:47:23.966472509+08:00","level":"INFO","msg":"created new stream","id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:23.966524079+08:00","level":"INFO","msg":"stream: started","id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:23.966596239+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:23.96673076+08:00","level":"INFO","msg":"sender: started","stream_id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:23.966795276+08:00","level":"INFO","msg":"handler: started","stream_id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:23.975483795+08:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"http://localhost:8080/graphql"}
+{"time":"2025-01-16T12:47:23.975547993+08:00","level":"ERROR","msg":"sender: upsertRun:","error":"failed to upsert bucket: returned error 404 Not Found: {\"errors\":[{\"message\":\"entity moma not found during upsertBucket\",\"path\":[\"upsertBucket\"]}],\"data\":{\"upsertBucket\":null}}"}
+{"time":"2025-01-16T12:47:23.985529551+08:00","level":"INFO","msg":"stream: closing","id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:23.985557672+08:00","level":"ERROR","msg":"sender: upsertConfig: RunRecord is nil"}
+{"time":"2025-01-16T12:47:24.042042671+08:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"http://localhost:8080/graphql"}
+{"time":"2025-01-16T12:47:24.042141113+08:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404 Not Found: {\"errors\":[{\"message\":\"entity moma not found during createRunFiles\",\"path\":[\"createRunFiles\"]}],\"data\":{\"createRunFiles\":null}}"}
+{"time":"2025-01-16T12:47:24.042898254+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-16T12:47:24.042972095+08:00","level":"INFO","msg":"handler: closed","stream_id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:24.043004426+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:24.043064517+08:00","level":"INFO","msg":"sender: closed","stream_id":"8mwjvd41"}
+{"time":"2025-01-16T12:47:24.043104183+08:00","level":"INFO","msg":"stream: closed","id":"8mwjvd41"}
