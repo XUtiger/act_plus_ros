@@ -479,6 +479,461 @@ rosgraph_msgs_generate_messages_py/fast:
 	$(MAKE) -f act_arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make act_arm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_nodejs
+
+# Build rule for target.
+sensor_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f gamepad/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make gamepad/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_lisp
+
+# Build rule for target.
+sensor_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make gamepad/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_eus
+
+# Build rule for target.
+sensor_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	$(MAKE) -f gamepad/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make gamepad/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_cpp
+
+# Build rule for target.
+sensor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make gamepad/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_py
+
+# Build rule for target.
+trajectory_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_py
+.PHONY : trajectory_msgs_generate_messages_py
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_py/fast:
+	$(MAKE) -f gamepad/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make gamepad/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+.PHONY : trajectory_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_lisp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make gamepad/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named piper_msgs_generate_messages_py
+
+# Build rule for target.
+piper_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 piper_msgs_generate_messages_py
+.PHONY : piper_msgs_generate_messages_py
+
+# fast build rule for target.
+piper_msgs_generate_messages_py/fast:
+	$(MAKE) -f gamepad/CMakeFiles/piper_msgs_generate_messages_py.dir/build.make gamepad/CMakeFiles/piper_msgs_generate_messages_py.dir/build
+.PHONY : piper_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named piper_msgs_generate_messages_lisp
+
+# Build rule for target.
+piper_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 piper_msgs_generate_messages_lisp
+.PHONY : piper_msgs_generate_messages_lisp
+
+# fast build rule for target.
+piper_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/piper_msgs_generate_messages_lisp.dir/build.make gamepad/CMakeFiles/piper_msgs_generate_messages_lisp.dir/build
+.PHONY : piper_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_lisp
+
+# Build rule for target.
+trajectory_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_lisp
+.PHONY : trajectory_msgs_generate_messages_lisp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make gamepad/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+.PHONY : trajectory_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named control_msgs_generate_messages_lisp
+
+# Build rule for target.
+control_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_lisp
+.PHONY : control_msgs_generate_messages_lisp
+
+# fast build rule for target.
+control_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make gamepad/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
+.PHONY : control_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named piper_msgs_generate_messages_nodejs
+
+# Build rule for target.
+piper_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 piper_msgs_generate_messages_nodejs
+.PHONY : piper_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+piper_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f gamepad/CMakeFiles/piper_msgs_generate_messages_nodejs.dir/build.make gamepad/CMakeFiles/piper_msgs_generate_messages_nodejs.dir/build
+.PHONY : piper_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_eus
+
+# Build rule for target.
+actionlib_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_eus
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make gamepad/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_nodejs
+
+# Build rule for target.
+geometry_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f gamepad/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make gamepad/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named piper_msgs_generate_messages_eus
+
+# Build rule for target.
+piper_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 piper_msgs_generate_messages_eus
+.PHONY : piper_msgs_generate_messages_eus
+
+# fast build rule for target.
+piper_msgs_generate_messages_eus/fast:
+	$(MAKE) -f gamepad/CMakeFiles/piper_msgs_generate_messages_eus.dir/build.make gamepad/CMakeFiles/piper_msgs_generate_messages_eus.dir/build
+.PHONY : piper_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_lisp
+
+# Build rule for target.
+actionlib_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_lisp
+.PHONY : actionlib_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_generate_messages_lisp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make gamepad/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_cpp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_cpp
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make gamepad/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_eus
+
+# Build rule for target.
+actionlib_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_eus
+.PHONY : actionlib_generate_messages_eus
+
+# fast build rule for target.
+actionlib_generate_messages_eus/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_generate_messages_eus.dir/build.make gamepad/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named piper_msgs_generate_messages_cpp
+
+# Build rule for target.
+piper_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 piper_msgs_generate_messages_cpp
+.PHONY : piper_msgs_generate_messages_cpp
+
+# fast build rule for target.
+piper_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/piper_msgs_generate_messages_cpp.dir/build.make gamepad/CMakeFiles/piper_msgs_generate_messages_cpp.dir/build
+.PHONY : piper_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_py
+
+# Build rule for target.
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) -f gamepad/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make gamepad/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_py
+
+# Build rule for target.
+geometry_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	$(MAKE) -f gamepad/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make gamepad/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_cpp
+
+# Build rule for target.
+actionlib_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_cpp
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make gamepad/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_py
+
+# Build rule for target.
+actionlib_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_py
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make gamepad/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named control_msgs_generate_messages_eus
+
+# Build rule for target.
+control_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_eus
+.PHONY : control_msgs_generate_messages_eus
+
+# fast build rule for target.
+control_msgs_generate_messages_eus/fast:
+	$(MAKE) -f gamepad/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make gamepad/CMakeFiles/control_msgs_generate_messages_eus.dir/build
+.PHONY : control_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_nodejs
+
+# Build rule for target.
+trajectory_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_nodejs
+.PHONY : trajectory_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f gamepad/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make gamepad/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_nodejs
+.PHONY : actionlib_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_generate_messages_nodejs/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make gamepad/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_eus
+
+# Build rule for target.
+trajectory_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_eus
+.PHONY : trajectory_msgs_generate_messages_eus
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_eus/fast:
+	$(MAKE) -f gamepad/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make gamepad/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+.PHONY : trajectory_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named control_msgs_generate_messages_cpp
+
+# Build rule for target.
+control_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_cpp
+.PHONY : control_msgs_generate_messages_cpp
+
+# fast build rule for target.
+control_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/control_msgs_generate_messages_cpp.dir/build.make gamepad/CMakeFiles/control_msgs_generate_messages_cpp.dir/build
+.PHONY : control_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named control_msgs_generate_messages_nodejs
+
+# Build rule for target.
+control_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_nodejs
+.PHONY : control_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+control_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f gamepad/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make gamepad/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
+.PHONY : control_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make gamepad/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named control_msgs_generate_messages_py
+
+# Build rule for target.
+control_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 control_msgs_generate_messages_py
+.PHONY : control_msgs_generate_messages_py
+
+# fast build rule for target.
+control_msgs_generate_messages_py/fast:
+	$(MAKE) -f gamepad/CMakeFiles/control_msgs_generate_messages_py.dir/build.make gamepad/CMakeFiles/control_msgs_generate_messages_py.dir/build
+.PHONY : control_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) -f gamepad/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make gamepad/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_lisp
+
+# Build rule for target.
+geometry_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make gamepad/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_py
+
+# Build rule for target.
+actionlib_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_py
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_generate_messages_py.dir/build.make gamepad/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_nodejs
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f gamepad/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make gamepad/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_cpp
+
+# Build rule for target.
+trajectory_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_cpp
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f gamepad/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make gamepad/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -516,6 +971,41 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... piper_msgs_generate_messages_py"
+	@echo "... piper_msgs_generate_messages_lisp"
+	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... control_msgs_generate_messages_lisp"
+	@echo "... piper_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... piper_msgs_generate_messages_eus"
+	@echo "... actionlib_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_eus"
+	@echo "... piper_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... control_msgs_generate_messages_eus"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... trajectory_msgs_generate_messages_eus"
+	@echo "... control_msgs_generate_messages_cpp"
+	@echo "... control_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... control_msgs_generate_messages_py"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... trajectory_msgs_generate_messages_cpp"
 .PHONY : help
 
 

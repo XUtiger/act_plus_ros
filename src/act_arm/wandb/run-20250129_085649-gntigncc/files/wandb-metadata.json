@@ -1,0 +1,65 @@
+{
+  "os": "Linux-6.8.0-51-generic-x86_64-with-glibc2.31",
+  "python": "CPython 3.10.16",
+  "startedAt": "2025-01-29T08:56:49.415263Z",
+  "args": [
+    "--task_name",
+    "sim_transfer_cube_human_training",
+    "--ckpt_dir",
+    "trainings",
+    "--policy_class",
+    "ACT",
+    "--kl_weight",
+    "1",
+    "--chunk_size",
+    "10",
+    "--hidden_dim",
+    "512",
+    "--batch_size",
+    "1",
+    "--dim_feedforward",
+    "3200",
+    "--lr",
+    "1e-5",
+    "--seed",
+    "0",
+    "--num_steps",
+    "2000"
+  ],
+  "program": "/home/easy/yin/robot_arm/opensource_prj/act_plus_ros/src/act_arm/imitate_episodes.py",
+  "codePath": "imitate_episodes.py",
+  "git": {
+    "remote": "https://github.com/XUtiger/act_plus_ros.git"
+  },
+  "email": "jsdoma20@126.com",
+  "root": "/home/easy/yin/robot_arm/opensource_prj/act_plus_ros/src/act_arm",
+  "host": "easy-OMEN",
+  "executable": "/usr/bin/python3",
+  "codePathLocal": "imitate_episodes.py",
+  "cpu_count": 24,
+  "cpu_count_logical": 32,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1340598935552",
+      "used": "270213865472"
+    }
+  },
+  "memory": {
+    "total": "67087921152"
+  },
+  "cpu": {
+    "count": 24,
+    "countLogical": 32
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.4"
+}

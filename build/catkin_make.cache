@@ -1,2 +1,2 @@
-act_arm
+act_arm:gamepad
 -DCATKIN_DEVEL_PREFIX=/home/easy/yin/robot_arm/opensource_prj/act_plus_ros/devel -DCMAKE_INSTALL_PREFIX=/home/easy/yin/robot_arm/opensource_prj/act_plus_ros/install -G Unix Makefiles
