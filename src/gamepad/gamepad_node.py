@@ -6,6 +6,7 @@ import time
 import pygame
 np.set_printoptions(precision=3, suppress=True)
 from piper_msgs.msg import PosCmd
+from std_msgs.msg import Bool
 from sensor_msgs.msg import JointState
 
 
@@ -77,131 +78,16 @@ class GamepadNode:
         # self.joy_sub = rospy.Subscriber('joy', Joy, self.joy_callback)
         
         # 创建发布者，发布控制命令
-        self.cmd_pub = rospy.Publisher('pos_cmd', PosCmd, queue_size=10)
+        # self.cmd_pub = rospy.Publisher('pos_cmd', PosCmd, queue_size=10)
         self.joint_cmd_pub = rospy.Publisher('joint_ctrl_single', JointState, queue_size=10)
+        self.piper_enabel_cmd = rospy.Publisher('enable_flag', Bool, queue_size=1)
         # 初始化Twist消息
         self.cmd = PosCmd()
 
         self.joint_cmd = JointState()
-        self.joint_cmd.name = ['joint0', 'joint1', 'joint2', 'joint3', 'joint4', 'joint5']
+        self.joint_cmd.name = ['joint0', 'joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6']
         
         rospy.loginfo("Gamepad node initialized")
-
-
-    def run(self):
-        
-        # Init Joystick
-        joystick = Joystick(0)
-        joystick.joystick_initialization()
-        # piper pos init [x,y,z,rx,ry,rz]
-        # piper_pos_init = [54.952, 0, 203.386, 0, 1.482, 0]
-        piper_pos_init = [54.952, 0, 203.386, 0, 85.0, 0]
-        piper_pos = list(piper_pos_init)
-        
-        rate = rospy.Rate(100)  # 200 Hz
-        while not rospy.is_shutdown():
-            joystick_data = joystick.get_joystick()
-            joy_axis_neg_indices = np.where(joystick_data < -0.9)[0]
-            joy_sts_indices = np.where(joystick_data > 0.9)[0]
-    
-            for value in joy_axis_neg_indices:
-                # axis Y
-                if value == 0:
-                    # print("LS Left")
-                    #z1_directions[4] = 1
-                    piper_pos[1] = piper_pos[1]+1
-                elif value == 1:
-                    # print("LS Up")
-                    #z1_directions[3] = 1
-                    piper_pos[0] = piper_pos[0]+1
-                elif value == 2:
-                    # print("LB Release")
-                    continue
-                elif value == 3:
-                    # print("RS Left")
-                    #z1_directions[2] = 1
-                    piper_pos[5] = piper_pos[5]+1
-                elif value == 4:
-                    # print("RS Up")
-                    # 这里有一个错误,原来是 piper_pos[2]+1
-                    piper_pos[2] = piper_pos[2]+1  
-                elif value == 5:
-                    # print("RB Release")
-                    continue
-    
-            for value in joy_sts_indices:
-                if value == 0:
-                    # print("LS Right")
-                    # z1_directions[4] = -1
-                    piper_pos[1] = piper_pos[1]-1
-                elif value == 1:
-                    # print("LS Down")
-                    # z1_directions[3] = -1
-                    piper_pos[0] = piper_pos[0]-1
-                # elif value == 2:
-                    # print("LB Pressed")
-                    # linear_vel = linear_vel - 0.0002
-                    # if linear_vel < 0:
-                    #     linear_vel = 0
-                    # print(f"current vel: {linear_vel}")
-                    
-                elif value == 3:
-                    # print("RS Right")
-                    # z1_directions[2] = -1
-                    piper_pos[5] = piper_pos[5]-1
-                elif value == 4:
-                    # print("RS Down")
-                    # z1_directions[5] = -1
-                    piper_pos[2] = piper_pos[2]-1
-                # elif value == 5:
-                #     # print("RB Pressed")
-                #     linear_vel = linear_vel + 0.0002
-                #     if linear_vel >0.3:
-                #         linear_vel = 0.3
-                #     print(f"current vel: {linear_vel}")
-                elif value == 6:
-                    # print("A Pressed")
-                    # z1_directions[1] = 1
-                    piper_pos[4] = piper_pos[4]+1
-                elif value == 7:
-                    # print("B Pressed")
-                    # z1_directions[0] = 1
-                    piper_pos[3] = piper_pos[3]+1
-                elif value == 8:
-                    # print("X Pressed")
-                    # z1_directions[0] = -1
-                    piper_pos[3] = piper_pos[3]-1
-                elif value == 9:
-                    # print("Y Pressed")
-                    # z1_directions[1] = -1
-                    piper_pos[4] = piper_pos[4]-1
-                elif value == 10:
-                    # print("LT Pressed")
-                    # z1_directions[6] = 1
-                    print("gripper open")
-                elif value == 11:
-                    # print("RT Pressed")
-                    # z1_directions[6] = -1
-                    print("gripper close")
-                elif value == 12:
-                    # print("Start Pressed")
-                    continue
-                elif value == 13:
-                    # print("reset")
-                    piper_pos = list(piper_pos_init) 
-            
-            # 这里有一个错误,应该是self.cmd而不是self.cmd_pub
-            self.cmd.x = piper_pos[0]
-            self.cmd.y = piper_pos[1]
-            self.cmd.z = piper_pos[2]
-            self.cmd.roll = piper_pos[3]
-            self.cmd.pitch = piper_pos[4]
-            self.cmd.yaw = piper_pos[5]
-            
-            self.cmd_pub.publish(self.cmd)
-            
-            rate.sleep()
-            # rospy.sleep(0.01)
 
 
     def run_position_control(self):
@@ -211,16 +97,18 @@ class GamepadNode:
             joystick.joystick_initialization()
             # piper pos init [x,y,z,rx,ry,rz]
             # piper_pos_init = [54.952, 0, 203.386, 0, 1.482, 0]
-            piper_pos_init = [0, 0, 0, 0, 0, 0]
+            piper_pos_init = [0, 0, 0, 0, 0, 0, 0]
             piper_pos = list(piper_pos_init)
             
             rate = rospy.Rate(100)  # 200 Hz
+            angle_step = 0.2
+            piper_enable_cmd = False
+            piper_enable_cmd_prev = False
             while not rospy.is_shutdown():
                 joystick_data = joystick.get_joystick()
                 joy_axis_neg_indices = np.where(joystick_data < -0.9)[0]
                 joy_sts_indices = np.where(joystick_data > 0.9)[0]
-                
-                angle_step = 0.2
+
                 for value in joy_axis_neg_indices:
                     # Joint_1
                     if value == 0:
@@ -280,6 +168,7 @@ class GamepadNode:
                     elif value == 6:
                         # print("A Pressed")
                         pass
+
                     # Joint_6
                     elif value == 7:
                         # print("B Pressed")
@@ -293,31 +182,45 @@ class GamepadNode:
                         pass
                     elif value == 10:
                         # print("LT Pressed")
-                        print("gripper open")
+                        # print("gripper open")
+                        piper_pos[6] = piper_pos[6] + angle_step*0.1
                     elif value == 11:
                         # print("RT Pressed")
-                        print("gripper close")
+                        # print("gripper close")
+                        piper_pos[6] = piper_pos[6] - angle_step*0.1
                     elif value == 12:
-                        # print("Start Pressed")
-                        continue
+                        print("Start Pressed")
+                        piper_enable_cmd = not piper_enable_cmd
+                        last_change_time = time.time()
                     elif value == 13:
                         # print("reset")
                         piper_pos = list(piper_pos_init) 
                 
                 # 限制关节角度
                 factor = np.pi/180
-                joint_0 = max(-154, min(154, piper_pos[0]))*factor
-                joint_1 = max(0, min(195, piper_pos[1]))*factor
-                joint_2 = max(-175, min(0, piper_pos[2]))*factor
-                joint_3 = max(-106, min(106, piper_pos[3]))*factor
-                joint_4 = max(-75, min(75, piper_pos[4]))*factor
-                joint_5 = max(-100, min(100, piper_pos[5]))*factor
-    
+                piper_pos[0] = max(-154, min(154, piper_pos[0]))
+                piper_pos[1] = max(0, min(195, piper_pos[1]))
+                piper_pos[2] = max(-175, min(0, piper_pos[2]))
+                piper_pos[3] = max(-106, min(106, piper_pos[3]))
+                piper_pos[4] = max(-75, min(75, piper_pos[4]))
+                piper_pos[5] = max(-100, min(100, piper_pos[5]))
+                piper_pos[6] = max(0, min(4.58, piper_pos[6]))
+                
+                joints = []
+                for i in range(7):
+                    joints.append(piper_pos[i]*factor)
+
+                # 
+                if piper_enable_cmd != piper_enable_cmd_prev and time.time() - last_change_time > 0.5:
+                    self.piper_enabel_cmd.publish(piper_enable_cmd)
+                    piper_enable_cmd_prev = piper_enable_cmd
+
                 # 发布关节角度  
                 self.joint_cmd.header.stamp = rospy.Time.now()
-                self.joint_cmd.position = [joint_0, joint_1, joint_2, joint_3, joint_4, joint_5] 
-                
+                # self.joint_cmd.position = [joint_0, joint_1, joint_2, joint_3, joint_4, joint_5, joint_6] 
+                self.joint_cmd.position = joints
                 self.joint_cmd_pub.publish(self.joint_cmd)
+
                 
                 rate.sleep()
 
