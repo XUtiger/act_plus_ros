@@ -15,7 +15,7 @@ class ImageRecorder:
         self.is_debug = is_debug
         self.bridge = CvBridge()
         # self.camera_names = ['cam_high', 'cam_left_wrist', 'cam_right_wrist'] #['cam_high', 'cam_low', 'cam_left_wrist', 'cam_right_wrist']
-        self.camera_names = ['cam_high','cam_right_wrist']
+        self.camera_names = ['cam_high','cam_left_wrist']
         if init_node:
             rospy.init_node('image_recorder', anonymous=True)
         for cam_name in self.camera_names:
@@ -47,6 +47,7 @@ class ImageRecorder:
         if self.is_debug:
             getattr(self, f'{cam_name}_timestamps').append(data.header.stamp.secs + data.header.stamp.secs * 1e-9)
 
+
     def image_cb_cam_high(self, data):
         cam_name = 'cam_high'
         return self.image_cb(cam_name, data)
@@ -67,6 +68,7 @@ class ImageRecorder:
         image_dict = dict()
         for cam_name in self.camera_names:
             image_dict[cam_name] = getattr(self, f'{cam_name}_image')
+            # print(f"robot_utils cam_name: {cam_name}")
         return image_dict
 
     def print_diagnostics(self):
@@ -95,7 +97,12 @@ class Recorder:
         self.is_debug = is_debug
 
         if init_node:
-            rospy.init_node('recorder', anonymous=True)
+            rospy.init_node(f'recorder', anonymous=True)
+        if side == 'left':
+            rospy.Subscriber("joint_states_single", JointState, self.puppet_state_cb)
+        if side == 'action':
+            rospy.Subscriber("joint_ctrl_single", JointState, self.action_cmd_cb)
+
         # rospy.Subscriber(f"/puppet_{side}/joint_states", JointState, self.puppet_state_cb)
         # rospy.Subscriber(f"/puppet_{side}/commands/joint_group", JointGroupCommand, self.puppet_arm_commands_cb)
         # rospy.Subscriber(f"/puppet_{side}/commands/joint_single", JointSingleCommand, self.puppet_gripper_commands_cb)
@@ -105,6 +112,12 @@ class Recorder:
             self.gripper_command_timestamps = deque(maxlen=50)
         time.sleep(0.1)
 
+    def action_cmd_cb(self, data):
+        self.arm_command = data.position
+        if self.is_debug:
+            self.arm_command_timestamps.append(time.time())
+    
+    
     def puppet_state_cb(self, data):
         self.qpos = data.position
         self.qvel = data.velocity

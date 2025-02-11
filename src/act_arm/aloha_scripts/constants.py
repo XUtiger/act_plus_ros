@@ -4,17 +4,13 @@ import os
 
 DATA_DIR = os.path.expanduser('/home/easy/yin/robot_arm/opensource_prj/act_plus_ros/src/act_arm/data')
 TASK_CONFIGS = {
-    'aloha_mobile_dummy':{
-        'dataset_dir': DATA_DIR + '/aloha_mobile_dummy',
-        'episode_len': 1000,
-        'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist']
-    },
     # user define (for test)
     'aloha_mobile_user_define':{
         'dataset_dir': DATA_DIR + '/aloha_mobile_dummy',
         'episode_len': 400,
-        'camera_names': ['cam_high', 'cam_right_wrist']
+        'camera_names': ['cam_high', 'cam_left_wrist']
     },
+
     # wash_pan
     'aloha_mobile_wash_pan':{
         'dataset_dir': DATA_DIR + '/aloha_mobile_wash_pan',
@@ -193,47 +189,6 @@ TASK_CONFIGS = {
         'episode_len': 2000,
         'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist']
     },
-
-    # shrimp
-    'aloha_mobile_shrimp':{
-        'dataset_dir': DATA_DIR + '/aloha_mobile_shrimp',
-        'train_ratio': 0.99,
-        'episode_len': 4500,
-        'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist']
-    },
-    'aloha_mobile_shrimp_truncated':{
-        'dataset_dir': DATA_DIR + '/aloha_mobile_shrimp_truncated',
-        'train_ratio': 0.99, # ratio of train data from the first dataset_dir
-        'episode_len': 3750,
-        'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist']
-    },
-    'aloha_mobile_shrimp_truncated_cotrain':{
-        'dataset_dir': [
-            DATA_DIR + '/aloha_mobile_shrimp_truncated',
-            DATA_DIR + '/aloha_compressed_dataset',
-        ], # only the first dataset_dir is used for val
-        'stats_dir': [
-            DATA_DIR + '/aloha_mobile_shrimp_truncated',
-        ],
-        'sample_weights': [5, 5],
-        'train_ratio': 0.99, # ratio of train data from the first dataset_dir
-        'episode_len': 3750,
-        'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist']
-    },
-    # 'aloha_mobile_shrimp_2_cotrain':{
-    #     'dataset_dir': [
-    #         DATA_DIR + '/aloha_mobile_shrimp_2',
-    #         DATA_DIR + '/aloha_mobile_shrimp_before_spatula_down', # 2200
-    #         DATA_DIR + '/aloha_compressed_dataset',
-    #     ], # only the first dataset_dir is used for val
-    #     'stats_dir': [
-    #         DATA_DIR + '/aloha_mobile_shrimp_2',
-    #     ],
-    #     'sample_weights': [5, 3, 2],
-    #     'train_ratio': 0.99, # ratio of train data from the first dataset_dir
-    #     'episode_len': 4500,
-    #     'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist']
-    # },
 }
 
 ### ALOHA fixed constants

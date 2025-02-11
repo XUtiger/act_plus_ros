@@ -8,62 +8,62 @@ np.set_printoptions(precision=3, suppress=True)
 from piper_msgs.msg import PosCmd
 from std_msgs.msg import Bool
 from sensor_msgs.msg import JointState
+from joystick import Joystick
 
+# class Joystick:
+#     def __init__(self, joystick_id):
+#         pygame.init()
+#         self.joystick_id = joystick_id
 
-class Joystick:
-    def __init__(self, joystick_id):
-        pygame.init()
-        self.joystick_id = joystick_id
+#     def joystick_initialization(self):
+#         if pygame.joystick.get_count() > 0:
+#             self.joystick = pygame.joystick.Joystick(self.joystick_id)
+#             self.joystick.init()
+#             print(f"Detected joystick: {self.joystick.get_name()}")
+#         else:
+#             print("No joystick detected.")
+#             raise ValueError("No joystick detected.")
 
-    def joystick_initialization(self):
-        if pygame.joystick.get_count() > 0:
-            self.joystick = pygame.joystick.Joystick(self.joystick_id)
-            self.joystick.init()
-            print(f"Detected joystick: {self.joystick.get_name()}")
-        else:
-            print("No joystick detected.")
-            raise ValueError("No joystick detected.")
+#     def _get_axis(self):
+#         axis_ls_horiz = self.joystick.get_axis(0)
+#         axis_ls_vert = self.joystick.get_axis(1)
 
-    def _get_axis(self):
-        axis_ls_horiz = self.joystick.get_axis(0)
-        axis_ls_vert = self.joystick.get_axis(1)
+#         axis_rs_horiz = self.joystick.get_axis(3)
+#         axis_rs_vert = self.joystick.get_axis(4)
 
-        axis_rs_horiz = self.joystick.get_axis(3)
-        axis_rs_vert = self.joystick.get_axis(4)
+#         axis_lb = self.joystick.get_axis(2)
+#         axis_rb = self.joystick.get_axis(5)
 
-        axis_lb = self.joystick.get_axis(2)
-        axis_rb = self.joystick.get_axis(5)
+#         return np.array([axis_ls_horiz, axis_ls_vert, axis_lb, axis_rs_horiz, axis_rs_vert, axis_rb])
 
-        return np.array([axis_ls_horiz, axis_ls_vert, axis_lb, axis_rs_horiz, axis_rs_vert, axis_rb])
+#     def _get_button(self):
+#         bu_a = self.joystick.get_button(0)
+#         bu_b = self.joystick.get_button(1)
+#         bu_x = self.joystick.get_button(2)
+#         bu_y = self.joystick.get_button(3)
+#         bu_lt = self.joystick.get_button(4)
+#         bu_rt = self.joystick.get_button(5)
+#         bu_start = self.joystick.get_button(6)
+#         bu_reset = self.joystick.get_button(7)
 
-    def _get_button(self):
-        bu_a = self.joystick.get_button(0)
-        bu_b = self.joystick.get_button(1)
-        bu_x = self.joystick.get_button(2)
-        bu_y = self.joystick.get_button(3)
-        bu_lt = self.joystick.get_button(4)
-        bu_rt = self.joystick.get_button(5)
-        bu_start = self.joystick.get_button(6)
-        bu_reset = self.joystick.get_button(7)
+#         return np.array([bu_a, bu_b, bu_x, bu_y, bu_lt, bu_rt, bu_start, bu_reset])
 
-        return np.array([bu_a, bu_b, bu_x, bu_y, bu_lt, bu_rt, bu_start, bu_reset])
+# # [axis_ls_horiz, axis_ls_vert, axis_lb, axis_rs_horiz, axis_rs_vert, axis_rb, \
+# # bu_a, bu_b, bu_x, bu_y, bu_lt, bu_rt, bu_start, bu_reset]
+#     def get_joystick(self):
+#         pygame.event.pump()
+#         joystick_axis_sts = self._get_axis()
+#         joystick_button_sts = self._get_button()
 
-# [axis_ls_horiz, axis_ls_vert, axis_lb, axis_rs_horiz, axis_rs_vert, axis_rb, \
-# bu_a, bu_b, bu_x, bu_y, bu_lt, bu_rt, bu_start, bu_reset]
-    def get_joystick(self):
-        pygame.event.pump()
-        joystick_axis_sts = self._get_axis()
-        joystick_button_sts = self._get_button()
+#         return np.concatenate([joystick_axis_sts, joystick_button_sts])
 
-        return np.concatenate([joystick_axis_sts, joystick_button_sts])
-
-    def print_info(self):
-        if pygame.joystick.get_count() > 0:
-            for i in range(pygame.joystick.get_count()):
-                print(
-                    f"joystick name {i}: {pygame.joystick.Joystick(i).get_name()}")
-        else:
-            print("No joystick found")
+#     def print_info(self):
+#         if pygame.joystick.get_count() > 0:
+#             for i in range(pygame.joystick.get_count()):
+#                 print(
+#                     f"joystick name {i}: {pygame.joystick.Joystick(i).get_name()}")
+#         else:
+#             print("No joystick found")
 
 
 
@@ -103,7 +103,7 @@ class GamepadNode:
             rate = rospy.Rate(100)  # 200 Hz
             angle_step = 0.2
             piper_enable_cmd = False
-            piper_enable_cmd_prev = False
+            reset_button_pressed = False 
             while not rospy.is_shutdown():
                 joystick_data = joystick.get_joystick()
                 joy_axis_neg_indices = np.where(joystick_data < -0.9)[0]
@@ -189,13 +189,23 @@ class GamepadNode:
                         # print("gripper close")
                         piper_pos[6] = piper_pos[6] - angle_step*0.1
                     elif value == 12:
-                        print("Start Pressed")
-                        piper_enable_cmd = not piper_enable_cmd
-                        last_change_time = time.time()
+                        if not reset_button_pressed:
+                            # print("Start Pressed")
+                            reset_button_pressed = True
+                            piper_enable_cmd = not piper_enable_cmd
+                            self.piper_enabel_cmd.publish(piper_enable_cmd)
+                        else:
+                            reset_button_release = False
                     elif value == 13:
                         # print("reset")
-                        piper_pos = list(piper_pos_init) 
+                        piper_pos = list(piper_pos_init)
                 
+                # 防止按键一直按着，机械臂重复复位
+                if joystick_data[12] == 0:
+                   reset_button_pressed = False 
+
+               
+            
                 # 限制关节角度
                 factor = np.pi/180
                 piper_pos[0] = max(-154, min(154, piper_pos[0]))
@@ -211,9 +221,9 @@ class GamepadNode:
                     joints.append(piper_pos[i]*factor)
 
                 # 
-                if piper_enable_cmd != piper_enable_cmd_prev and time.time() - last_change_time > 0.5:
-                    self.piper_enabel_cmd.publish(piper_enable_cmd)
-                    piper_enable_cmd_prev = piper_enable_cmd
+                # if piper_enable_cmd != piper_enable_cmd_prev and time.time() - last_change_time > 0.5:
+                #     self.piper_enabel_cmd.publish(piper_enable_cmd)
+                #     piper_enable_cmd_prev = piper_enable_cmd
 
                 # 发布关节角度  
                 self.joint_cmd.header.stamp = rospy.Time.now()

@@ -11,7 +11,7 @@ from constants import DT, START_ARM_POSE, TASK_CONFIGS, FPS
 from constants import MASTER_GRIPPER_JOINT_MID, PUPPET_GRIPPER_JOINT_CLOSE, PUPPET_GRIPPER_JOINT_OPEN
 from robot_utils import Recorder, ImageRecorder, get_arm_gripper_positions
 from robot_utils import move_arms, torque_on, torque_off, move_grippers
-from real_env import make_real_env, get_action
+from real_env import make_real_env
 
 # from interbotix_xs_modules.arm import InterbotixManipulatorXS
 
@@ -19,61 +19,9 @@ import IPython
 e = IPython.embed
 
 
-def opening_ceremony(master_bot_left, master_bot_right, puppet_bot_left, puppet_bot_right):
-    """ Move all 4 robots to a pose where it is easy to start demonstration """
-    # reboot gripper motors, and set operating modes for all motors
-    puppet_bot_left.dxl.robot_reboot_motors("single", "gripper", True)
-    puppet_bot_left.dxl.robot_set_operating_modes("group", "arm", "position")
-    puppet_bot_left.dxl.robot_set_operating_modes("single", "gripper", "current_based_position")
-    master_bot_left.dxl.robot_set_operating_modes("group", "arm", "position")
-    master_bot_left.dxl.robot_set_operating_modes("single", "gripper", "position")
-    # puppet_bot_left.dxl.robot_set_motor_registers("single", "gripper", 'current_limit', 1000) # TODO(tonyzhaozh) figure out how to set this limit
-
-    puppet_bot_right.dxl.robot_reboot_motors("single", "gripper", True)
-    puppet_bot_right.dxl.robot_set_operating_modes("group", "arm", "position")
-    puppet_bot_right.dxl.robot_set_operating_modes("single", "gripper", "current_based_position")
-    master_bot_right.dxl.robot_set_operating_modes("group", "arm", "position")
-    master_bot_right.dxl.robot_set_operating_modes("single", "gripper", "position")
-    # puppet_bot_left.dxl.robot_set_motor_registers("single", "gripper", 'current_limit', 1000) # TODO(tonyzhaozh) figure out how to set this limit
-
-    torque_on(puppet_bot_left)
-    torque_on(master_bot_left)
-    torque_on(puppet_bot_right)
-    torque_on(master_bot_right)
-
-    # move arms to starting position
-    start_arm_qpos = START_ARM_POSE[:6]
-    move_arms([master_bot_left, puppet_bot_left, master_bot_right, puppet_bot_right], [start_arm_qpos] * 4, move_time=1.5)
-    # move grippers to starting position
-    move_grippers([master_bot_left, puppet_bot_left, master_bot_right, puppet_bot_right], [MASTER_GRIPPER_JOINT_MID, PUPPET_GRIPPER_JOINT_CLOSE] * 2, move_time=0.5)
-
-
-    # press gripper to start data collection
-    # disable torque for only gripper joint of master robot to allow user movement
-    master_bot_left.dxl.robot_torque_enable("single", "gripper", False)
-    master_bot_right.dxl.robot_torque_enable("single", "gripper", False)
-    print(f'Close the gripper to start')
-    close_thresh = -1.4
-    pressed = False
-    while not pressed:
-        gripper_pos_left = get_arm_gripper_positions(master_bot_left)
-        gripper_pos_right = get_arm_gripper_positions(master_bot_right)
-        if (gripper_pos_left < close_thresh) and (gripper_pos_right < close_thresh):
-            pressed = True
-        time.sleep(DT/10)
-    torque_off(master_bot_left)
-    torque_off(master_bot_right)
-    print(f'Started!')
-
-
 def capture_one_episode(dt, max_timesteps, camera_names, dataset_dir, dataset_name, overwrite):
     print(f'Dataset name: {dataset_name}')
 
-    # source of data
-    # master_bot_left = InterbotixManipulatorXS(robot_model="wx250s", group_name="arm", gripper_name="gripper",
-    #                                           robot_name=f'master_left', init_node=True)
-    # master_bot_right = InterbotixManipulatorXS(robot_model="wx250s", group_name="arm", gripper_name="gripper",
-    #                                            robot_name=f'master_right', init_node=False)
     env = make_real_env(init_node=False, setup_robots=False)
 
     # saving dataset
@@ -85,10 +33,6 @@ def capture_one_episode(dt, max_timesteps, camera_names, dataset_dir, dataset_na
         print(f'Dataset already exist at \n{dataset_path}\nHint: set overwrite to True.')
         exit()
 
-    # move all 4 robots to a starting pose where it is easy to start teleoperation, then wait till both gripper closed
-    # 置位机器人
-    # opening_ceremony(master_bot_left, master_bot_right, env.puppet_bot_left, env.puppet_bot_right)
-
     # Data collection
     ts = env.reset(fake=True)
     timesteps = [ts]
@@ -96,12 +40,10 @@ def capture_one_episode(dt, max_timesteps, camera_names, dataset_dir, dataset_na
     actual_dt_history = []
     time0 = time.time()
     DT = 1 / FPS
-    # wrapper actions for code test temp
-    action = [1]*14
 
     for t in tqdm(range(max_timesteps)):
         t0 = time.time() #
-        # action = get_action(master_bot_left, master_bot_right)  # 获取真实的机械臂位置和夹爪数据
+        action = env.get_action()     # 获取真实的机械臂位置和夹爪数据
         t1 = time.time() #
         ts = env.step(action)
         t2 = time.time() #
@@ -110,14 +52,6 @@ def capture_one_episode(dt, max_timesteps, camera_names, dataset_dir, dataset_na
         actual_dt_history.append([t0, t1, t2])
         time.sleep(max(0, DT - (time.time() - t0)))
     print(f'Avg fps: {max_timesteps / (time.time() - time0)}')
-
-    # Torque on both master bots
-    # torque_on(master_bot_left)
-    # torque_on(master_bot_right)
-    # Open puppet grippers
-    # env.puppet_bot_left.dxl.robot_set_operating_modes("single", "gripper", "position")
-    # env.puppet_bot_right.dxl.robot_set_operating_modes("single", "gripper", "position")
-    # move_grippers([env.puppet_bot_left, env.puppet_bot_right], [PUPPET_GRIPPER_JOINT_OPEN] * 2, move_time=0.5)
 
     freq_mean = print_dt_diagnosis(actual_dt_history)
     if freq_mean < 30:
@@ -220,22 +154,26 @@ def capture_one_episode(dt, max_timesteps, camera_names, dataset_dir, dataset_na
             else:
                 _ = image.create_dataset(cam_name, (max_timesteps, 480, 640, 3), dtype='uint8',
                                          chunks=(1, 480, 640, 3), )
-        _ = obs.create_dataset('qpos', (max_timesteps, 14))
-        _ = obs.create_dataset('qvel', (max_timesteps, 14))
+        _ = obs.create_dataset('qpos', (max_timesteps, 7))
+        _ = obs.create_dataset('qvel', (max_timesteps, 7))
+        _ = root.create_dataset('action', (max_timesteps, 7))
         # _ = obs.create_dataset('effort', (max_timesteps, 14))
-        _ = root.create_dataset('action', (max_timesteps, 14))
+        # _ = obs.create_dataset('qpos', (max_timesteps, 14))
+        # _ = obs.create_dataset('qvel', (max_timesteps, 14))
+        # _ = obs.create_dataset('effort', (max_timesteps, 14))
+        # _ = root.create_dataset('action', (max_timesteps, 14))
         # _ = root.create_dataset('base_action', (max_timesteps, 2))
         # _ = root.create_dataset('base_action_t265', (max_timesteps, 2))
 
         # print(f"qpos: {len(data_dict['/observations/qpos'])}")
         # print(f"qvel: {len(data_dict['/observations/qvel'])}")
         # print(f"cam_right_wrist: {len(data_dict['/observations/images/cam_right_wrist'])}")
-        # print(data_dict['/observations/qvel'].shape)
-        # print(data_dict['/action'].shape)
-        print("================cam_right_wrist============")
-        print(len(data_dict['/observations/images/cam_right_wrist'])) 
-        print("================cam_high============")
-        print(len(data_dict['/observations/images/cam_high']))
+        print(f"qpos: {len(data_dict['/observations/qpos'])}")
+        print(f"qvel: {len(data_dict['/observations/qvel'])}")
+        print(f"action: {len(data_dict['/action'])}")
+        print(f"high_images: {len(data_dict['/observations/images/cam_high'])}")
+        print(f"left_images: {len(data_dict['/observations/images/cam_high'])}")
+
         for name, array in data_dict.items():
             root[name][...] = array
 
