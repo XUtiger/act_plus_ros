@@ -97,7 +97,9 @@ class GamepadNode:
             joystick.joystick_initialization()
             # piper pos init [x,y,z,rx,ry,rz]
             # piper_pos_init = [54.952, 0, 203.386, 0, 1.482, 0]
-            piper_pos_init = [0, 0, 0, 0, 0, 0, 0]
+            # Joint unit degress
+            # Gripper unit m  max 0.067m
+            piper_pos_init = [0, 0, 0, 0, 0, 25.8, 0]    
             piper_pos = list(piper_pos_init)
             
             rate = rospy.Rate(100)  # 200 Hz

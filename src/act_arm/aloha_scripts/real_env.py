@@ -58,9 +58,7 @@ class RealEnv:
     def get_qpos(self):
         left_qpos_raw = self.recorder_left.qpos
         left_arm_qpos = left_qpos_raw[:6]
-        # mock
-        left_gripper_qpos = np.array([0.0])
-        # left_gripper_qpos = np.array([left_qpos_raw[6]]) # this is position not joint
+        left_gripper_qpos = np.array([left_qpos_raw[6] / 0.67]) # this is gripper position not joint
         return np.concatenate([left_arm_qpos, left_gripper_qpos])
 
     def get_qvel(self):
@@ -68,7 +66,7 @@ class RealEnv:
         left_arm_qvel = left_qvel_raw[:6]
         # mock
         left_gripper_qvel = np.array([0.0])
-        # left_gripper_qvel = np.array([left_qvel_raw[6]]) # this is position not joint
+        # left_gripper_qvel = np.array([left_qvel_raw[6]]) # this is gripper position not joint
         return np.concatenate([left_arm_qvel, left_gripper_qvel])
     
     def get_effort(self):
